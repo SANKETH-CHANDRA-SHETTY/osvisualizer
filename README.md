@@ -9,6 +9,10 @@ A web-based learning tool that helps undergraduate students “feel” how OS al
 
 ---
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/adb8a0f3-b1f3-4835-9c03-583ca8944a33/deploy-status)](https://app.netlify.com/projects/os-visual-lab/deploys)
+
+---
+
 ## 🚀 Live Demo
 
 [https://osvisualizer.netlify.app/](https://osvisualizer.netlify.app/)
