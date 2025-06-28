@@ -74,25 +74,6 @@ Open your browser at `http://localhost:5173` to view the app.
 
 ---
 
-## 📂 Project Structure
-
-```
-osvisualizer/
-├── public/                # Static assets & HTML template
-├── src/
-│   ├── assets/            # Images, icons, etc.        
-│   ├── pages/             # Page‑level components or routes           
-|   ├── App.css
-│   ├── App.jsx            # Root component
-│   └── main.jsx           # Entry point (Vite)
-├── .gitignore
-├── package.json
-├── ROADMAP.md             # Project roadmap (optional)
-└── README.md
-```
-
----
-
 ## 🤝 Contributing
 
 Contributions are very welcome!

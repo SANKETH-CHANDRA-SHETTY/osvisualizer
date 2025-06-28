@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg-dark: #1E293B;
+  --text-light: #F8FAFC;
+  --text-subtle: #94A3B8;
+  --highlight: #FACC15;
+  --primary: #3B82F6;
+  --primary-dark: #2563EB;
+  --card-bg: #334155;
+  --success: #4ADE80;
+  --fail: #F87171;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+}
+
+.os-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* ============================= */
+/* OSDefinition + Responsibilities */
+/* ============================= */
+.osdef-container,
+.os-types-container {
+  margin-bottom: 60px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.osdef-header h2,
+.os-types-container h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin-bottom: 16px;
+}
+
+.osdef-header p {
+  text-align: center;
+  color: var(--text-subtle);
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--highlight);
+  margin-bottom: 10px;
+}
+
+/* Bridge */
+.bridge-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.bridge-box {
+  background-color: var(--card-bg);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.bridge-arrow {
+  font-size: 1.5rem;
+}
+
+.bridge-caption {
+  text-align: center;
+  color: var(--text-subtle);
+  font-size: 0.95rem;
+}
+
+/* Responsibilities Grid */
+.responsibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.resp-card {
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.resp-front {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.resp-back {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+}
+
+/* Real World Analogy */
+.clickable-title {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.clickable-title:hover {
+  color: var(--primary);
+}
+
+.analogy-box {
+  margin-top: 12px;
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+  line-height: 1.5;
+}
+
+/* With vs Without OS */
+.mode-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+.mode-buttons button {
+  background-color: var(--primary);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.mode-buttons button:hover {
+  background-color: var(--primary-dark);
+}
+.comparison-panel {
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+}
+.resource-bar.with,
+.resource-bar.without {
+  display: flex;
+  margin: 16px 0;
+  gap: 8px;
+}
+.chaos {
+  flex: 1;
+  background-color: #475569;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+.chaos.lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #64748b,
+    #64748b 10px,
+    #1e293b 10px,
+    #1e293b 20px
+  );
+}
+.fair {
+  display: flex;
+  flex: 1;
+  background-color: #1e40af;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.fair-app {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: white;
+}
+.divider {
+  width: 2px;
+  background-color: white;
+}
+.comparison-points {
+  padding-left: 20px;
+  color: var(--text-subtle);
+  font-size: 0.95rem;
+}
+
+/* =================== */
+/* OSTypes Simulation */
+/* =================== */
+.app-button {
+  margin: 8px 12px 12px 0;
+  padding: 10px 18px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.app-button:hover {
+  background-color: var(--primary-dark);
+}
+.app-button.disabled {
+  background-color: #64748B;
+  cursor: not-allowed;
+}
+
+.batch-area,
+.multi-procs,
+.app-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.job-card {
+  padding: 12px;
+  border-radius: 6px;
+  width: 120px;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--card-bg);
+  color: var(--text-light);
+}
+.job-card.processing {
+  background-color: var(--highlight);
+  color: black;
+}
+.job-card.done {
+  background-color: var(--success);
+  color: black;
+}
+
+.realtime-box {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  font-weight: bold;
+}
+.realtime-box.processing {
+  background-color: var(--highlight);
+  color: black;
+}
+.realtime-box.done {
+  background-color: var(--success);
+  color: black;
+}
+.realtime-box.failed {
+  background-color: var(--fail);
+  color: white;
+}
+
+.distributed-steps {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dist-step {
+  background-color: rgba(59, 130, 246, 0.2);
+  padding: 10px;
+  border-radius: 6px;
+  animation: slide-in 0.4s ease-in-out;
+}
+@keyframes slide-in {
+  from { transform: translateX(-15px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.proc-block {
+  padding: 10px 15px;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  font-weight: bold;
+}
+.shared-cpu {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--text-subtle);
+}
+
+/* ===================== */
+/* Time Sharing OS View */
+/* ===================== */
+.user-area {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.user-box {
+  flex: 1 1 100px;
+  padding: 18px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+  color: #e2e8f0;
+}
+.user-box.active {
+  background-color: #38bdf8;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+}
+.user-box.completed {
+  background-color: #10b981;
+  color: white;
+}
+.user-box.happy {
+  background-color: #22c55e;
+  color: white;
+}
+.user-box.waiting {
+  background-color: #facc15;
+  color: black;
+}
+.user-box.sad {
+  background-color: #f87171;
+  color: black;
+}
+
+/* ===================== */
+/* Single Process Sim */
+/* ===================== */
+.task-box {
+  padding: 12px;
+  border-radius: 8px;
+  width: 140px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #475569;
+}
+.task-box.running {
+  background-color: #22c55e;
+  color: #fff;
+}
+.task-box.waiting {
+  background-color: #64748b;
+  color: #f1f5f9;
+}
+.task-box.done {
+  background-color: #38bdf8;
+  color: #fff;
+}
+
+/* ===================== */
+/* Log Panel Reuse */
+/* ===================== */
+.log-panel {
+  background-color: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #334155;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+.log-panel h5 {
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+.log-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+.log-panel li {
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bridge-row,
+  .responsibility-grid,
+  .user-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-box {
+    width: 90%;
+  }
+
+  .task-box {
+    width: 100%;
+  }
+
+  .comparison-row {
+    flex-direction: column;
+  }
+}
+
+.intro-container {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 32px; /* optional: for spacing */
+}
