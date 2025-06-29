@@ -247,6 +247,12 @@ function NPSJF() {
         onSpeedChange={setSpeed}
       />
 
+      <ProcessLifeCycle
+        scheduled={scheduled}
+        currentStep={currentStep}
+        systemTime={systemTime}
+      />
+
       <GanttChart scheduled={scheduled.slice(0, currentStep + 1)} />
 
       <ProcessQueue
@@ -263,11 +269,6 @@ function NPSJF() {
 
       <ResultsTable scheduled={scheduled} />
 
-      <ProcessLifeCycle
-        scheduled={scheduled}
-        currentStep={currentStep}
-        systemTime={systemTime}
-      />
     </div>
   );
 }

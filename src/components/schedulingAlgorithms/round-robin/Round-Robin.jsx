@@ -294,6 +294,15 @@ function RoundRobin() {
             </section>
 
             <section className="algorithm-section">
+                <ProcessLifeCycle
+                    scheduled={computeLifecycle(processes, ganttData, currentStep, systemTime)}
+                    ganttData={ganttData}
+                    currentStep={currentStep}
+                    systemTime={systemTime}
+                />
+            </section>
+
+            <section className="algorithm-section">
                 <GanttChart scheduled={ganttData.slice(0, currentStep + 1)} />
             </section>
 
@@ -309,14 +318,7 @@ function RoundRobin() {
                 <ResultsTable scheduled={scheduled} />
             </section>
 
-            <section className="algorithm-section">
-                <ProcessLifeCycle
-                    scheduled={computeLifecycle(processes, ganttData, currentStep, systemTime)}
-                    ganttData={ganttData}
-                    currentStep={currentStep}
-                    systemTime={systemTime}
-                />
-            </section>
+            
         </div>
     );
 }

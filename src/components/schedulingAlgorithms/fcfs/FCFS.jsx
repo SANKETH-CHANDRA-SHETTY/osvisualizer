@@ -214,6 +214,14 @@ function FCFS() {
             </section>
 
             <section className="algorithm-section">
+                <ProcessLifeCycle
+                    scheduled={scheduled}
+                    currentStep={currentStep}
+                    systemTime={systemTime}
+                />
+            </section>
+
+            <section className="algorithm-section">
                 <GanttChart scheduled={scheduled.slice(0, currentStep + 1)} />
             </section>
 
@@ -236,14 +244,6 @@ function FCFS() {
 
             <section className="algorithm-section">
                 <ResultsTable scheduled={scheduled} />
-            </section>
-
-            <section className="algorithm-section">
-                <ProcessLifeCycle
-                    scheduled={scheduled}
-                    currentStep={currentStep}
-                    systemTime={systemTime}
-                />
             </section>
         </div>
     );

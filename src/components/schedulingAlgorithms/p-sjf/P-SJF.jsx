@@ -258,6 +258,16 @@ function PSJF() {
             </section>
 
             <section className="algorithm-section">
+                <ProcessLifeCycle
+                    scheduled={scheduled}
+                    ganttData={ganttData}
+                    currentStep={currentStep}
+                    systemTime={systemTime}
+                />
+
+            </section>
+
+            <section className="algorithm-section">
                 <GanttChart scheduled={ganttData.slice(0, currentStep + 1)} />
             </section>
 
@@ -281,15 +291,7 @@ function PSJF() {
                 <ResultsTable scheduled={scheduled} />
             </section>
 
-            <section className="algorithm-section">
-                <ProcessLifeCycle
-                    scheduled={scheduled}
-                    ganttData={ganttData}
-                    currentStep={currentStep}
-                    systemTime={systemTime}
-                />
-
-            </section>
+            
         </div>
     );
 }
