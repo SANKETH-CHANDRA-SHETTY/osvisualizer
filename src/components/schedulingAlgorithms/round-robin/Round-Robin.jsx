@@ -142,12 +142,13 @@ function RoundRobin() {
                 const remaining = processes.find(p => p.name === proc.name)?.burst ?? '?';
                 pushNarration(
                     `📦 Step ${index + 1} of ${ganttData.length}:\n` +
-                    `🔹 Process ${proc.name} started execution at time ${proc.start}.\n` +
-                    `⚡ Will run for ${duration} unit(s) till ${proc.end}.\n` +
-                    `🔍 SJF-Preemptive selects the job with shortest *remaining* time at every tick.\n` +
-                    `⏱ Remaining Time: ${remaining > duration ? remaining - duration : 0} (after execution)\n` +
+                    `🔹 Process ${proc.name} is executing from time ${proc.start} to ${proc.end}.\n` +
+                    `🌀 Round Robin uses a fixed time quantum (e.g., ${timeQuantum} unit${timeQuantum > 1 ? 's' : ''}).\n` +
+                    `⏱ This time slice: ${proc.end - proc.start} unit(s).\n` +
+                    `📉 Remaining Burst Time after this slice: ${Math.max(remaining - (proc.end - proc.start), 0)}\n` +
                     `📈 System Time: ${proc.start} → ${proc.end}`
                 );
+
             }
 
             index++;
@@ -318,7 +319,7 @@ function RoundRobin() {
                 <ResultsTable scheduled={scheduled} />
             </section>
 
-            
+
         </div>
     );
 }
